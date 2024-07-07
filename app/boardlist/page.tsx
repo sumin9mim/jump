@@ -6,7 +6,7 @@ import { v4 as uuidv4 } from 'uuid';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import React, { useState, useEffect } from 'react';
-import * as S from './style';
+import * as S from './styles';
 import { IBoardListUIProps } from './types';
 
 // // 예시로 date-fns 라이브러리 사용
@@ -72,7 +72,9 @@ export default function Boardlist() {
                 width='400px'
                 // onClick={onClickMoveToPage(`/boards/${e._id}`)}
               >
-                {object.titleValue}
+                <Link href={`/boardview/${object.id}`}>
+                  {object.titleValue}
+                </Link>
               </S.TableColumnTitle>
               <S.TableColumn width='200px'>{object.writerValue}</S.TableColumn>
               {/* <S.TableColumn>{getDate(data.pwdValue)}</S.TableColumn> */}
@@ -81,7 +83,10 @@ export default function Boardlist() {
         </S.TableBody>
       </S.TableWrapper>
       <S.Footer>
-        <button onClick={() => go('/boardwrite')} className='btn-primary'>
+        <button
+          onClick={() => router.push('/boardwrite')}
+          className='btn-primary'
+        >
           글쓰기
         </button>
       </S.Footer>

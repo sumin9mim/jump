@@ -3,18 +3,8 @@
 
 import { useRouter } from 'next/navigation';
 import Input from './input';
-import * as S from './style';
+import * as S from './styles';
 import { IBoardWriteUIProps } from './types';
-
-// Boardwrite.tsx
-
-// Boardwrite.tsx
-
-// Boardwrite.tsx
-
-// Boardwrite.tsx
-
-// Boardwrite.tsx
 
 // Boardwrite.tsx
 
